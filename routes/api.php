@@ -18,5 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('reserves','ReserveController@index');
-Route::post('reserves','ReserveController@store');
+Route::get('/reserves','ReserveController@index');
+Route::post('/reserves','ReserveController@store');
+
+Route::resource('books','BookController');

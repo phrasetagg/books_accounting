@@ -11,7 +11,7 @@ class ReserveController extends Controller
     //Получение всех броней
     public function index()
     {
-        $reserves = Reserve::all();
+        $reserves =  Reserve::orderBy('id', 'DESC')->get();
 
         return response()->json($reserves, 200);
     }

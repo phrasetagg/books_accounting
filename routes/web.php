@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('books');
+});
+
+Route::get('/reserves', function () {
+    return view('reserves');
 });
