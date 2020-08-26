@@ -19,5 +19,6 @@ class ReserveController extends Controller
     public function store(Request $request)
     {
         CreateReserveJob::dispatch($request)->onQueue('CreatingReserves');
+        return response()->json("Success",201);
     }
 }

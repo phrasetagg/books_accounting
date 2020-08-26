@@ -96,11 +96,9 @@
                 method: "GET",
                 url: '/api/reserves',
                 type: 'JSON',
-                success: function (jsondata) {
-                    console.log(jsondata);
+                success: function (answer) {
                     let div = document.createElement('ul');
-
-                    jsondata.forEach(element => div.innerHTML += "<li>" + element['renter'] + " Дата начала аренды:" + element['date_start'] + " Дата окончания аренды:" + element['date_end'] + "</li>");
+                    answer.forEach(element => div.innerHTML += "<li>" + element['renter'] + " Дата начала аренды:" + element['date_start'] + " Дата окончания аренды:" + element['date_end'] + "</li>");
                     content.append(div);
                 }
             })

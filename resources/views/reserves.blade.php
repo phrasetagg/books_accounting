@@ -80,7 +80,7 @@
     @endif
 
     <div class="content" id="content">
-        <div class="title m-b-md">
+        <div class="title m-b-md" id="h1">
             Books Accounting
         </div>
 
@@ -123,8 +123,10 @@
                     dataType: "json",
                     url: '/api/reserves',
                     data: data,
-                    success: function () {
-                        alert("Reserve submitted successfully!");
+                    type: 'JSON',
+                    success: function (answer) {
+                        $("#h1").text("Аренда прошла успешно!");
+                        $("#reserveForm")[0].reset();
                     }
                 });
                 return false;
